@@ -1,0 +1,110 @@
+body{
+  display: flex;
+  background: #575757;
+  min-height: 97vh;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Lobster', cursive;
+}
+
+.content{
+  position: relative;
+}
+ 
+.content h2 {
+  color: #fff;
+  font-size: 8em;
+  position: absolute;
+  letter-spacing: 5px;
+  transform: translate(-50%, -50%);
+}
+
+.content h2:nth-child(1){
+  color: transparent;
+  -webkit-text-stroke: 2px rgb(18, 10, 143);
+}
+
+.content h2:nth-child(2){
+  color: gold;
+  animation: animate 3s ease-in-out infinite;
+}
+
+@keyframes animate{
+  0%,
+  100%{
+    clip-path: polygon(
+      0% 45%,
+      16% 44%,
+      33% 50%,
+      54% 60%,
+      70% 61%,
+      84% 59%,
+      100% 52%,
+      100% 100%,
+      0% 100%
+    );
+  }
+  50% {
+    clip-path: polygon(
+      0% 60%,
+      15% 65%,
+      34% 66%,
+      51% 62%,
+      67% 50%,
+      84% 45%,
+      100% 46%,
+      100% 100%,
+      0% 100%
+    );
+  }
+}
+
+.ball-wrapper{
+  height: 500px;
+  position: relative;
+}
+
+.ball{
+  width: 100px;
+  height: 100px;
+  background: #c35a14;
+  border-radius: 50%;
+  border: 2px solid #000;
+  background-image:
+    radial-gradient(circle at -10px 20px, transparent 47px, #000 50px, #000 25px, trasnparent 0),
+    radial-gradient(circle at 110px 70px, transparent 47px, #000 50px, trasnparent 0),
+    linear-gradient(110deg, transparent 60px, #000 63px, transparent 0),
+    linear-gradient(18deg, transparent 56px, #000 60px, transparent 0);
+    animation: bounce .5s cubic-bezier(.8, -.5, -.2, 1.4) infinite alternate;
+}
+
+.shadow{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+  z-index: -1;
+  animation: shadow .5s cubic-bezier(.8, -.5, -.2, 1.4) infinite alternate;
+}
+
+@keyframes bounce{
+  100%{
+    transform: translate(0, 100px, 0)
+    scale3d(1.05, 0.95, 1);
+  }
+}
+@keyframes shadow{
+  0%{
+    transform: rotateX(80deg)
+    scale3d(0.5, 0.5, 1);
+    background-color: rgb(0,0,0,0.1);
+  }
+  100%{
+    transform: rotateX(80deg)
+    scale3d:(.8, .8, 1);
+    background-color: rgb(0, 0, 0, 0.5);
+  }
+}
+
