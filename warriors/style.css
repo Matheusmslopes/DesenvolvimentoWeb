@@ -1,14 +1,19 @@
 body{
   display: flex;
-  background: #575757;
   min-height: 97vh;
   align-items: center;
   justify-content: center;
   font-family: 'Lobster', cursive;
+  background-image: url("https://i.pinimg.com/736x/96/7a/56/967a56490eb024aefa1ab1d0ceb1471b--nba-arenas-oracle-arena.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  
 }
 
 .content{
   position: relative;
+  
 }
  
 .content h2 {
@@ -60,7 +65,7 @@ body{
 }
 
 .ball-wrapper{
-  height: 500px;
+  height: 200px;
   position: relative;
 }
 
@@ -71,11 +76,11 @@ body{
   border-radius: 50%;
   border: 2px solid #000;
   background-image:
-    radial-gradient(circle at -10px 20px, transparent 47px, #000 50px, #000 25px, trasnparent 0),
-    radial-gradient(circle at 110px 70px, transparent 47px, #000 50px, trasnparent 0),
-    linear-gradient(110deg, transparent 60px, #000 63px, transparent 0),
-    linear-gradient(18deg, transparent 56px, #000 60px, transparent 0);
-    animation: bounce .5s cubic-bezier(.8, -.5, -.2, 1.4) infinite alternate;
+    radial-gradient( circle at -10px 20px, transparent 47px, #000 50px, #000 25px, trasnparent 0),
+    radial-gradient( circle at 110px 70px, transparent 47px, #000 50px, trasnparent 0),
+    linear-gradient( 110deg, transparent 60px, #000 63px, transparent 0),
+    linear-gradient( 18deg, transparent 56px, #000 60px, transparent 0);
+    animation: bounce .5s cubic-bezier(.8, -.5, .2, 1.4) infinite alternate;
 }
 
 .shadow{
@@ -86,12 +91,12 @@ body{
   bottom: -50px;
   left: 0;
   z-index: -1;
-  animation: shadow .5s cubic-bezier(.8, -.5, -.2, 1.4) infinite alternate;
+  animation: shadow .5s cubic-bezier(.8, -.5, .2, 1.4) infinite alternate;
 }
 
-@keyframes bounce{
-  100%{
-    transform: translate(0, 100px, 0)
+@keyframes bounce {
+  100% {
+    transform: translate3d(0, 100px, 0)
     scale3d(1.05, 0.95, 1);
   }
 }
